@@ -17,10 +17,10 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Dropdown
+               Pages
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
+                <router-link class="dropdown-item" to="/posts" v-if="isLogin">Posts</router-link>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
                   <hr class="dropdown-divider">
@@ -81,7 +81,7 @@ export default {
         if (user) {
           //    const uid = user.uid;
           me.$store.dispatch("set_user", user); //
-        //  router.push("/"); 
+        router.push("/");  // 
           // ...
         } else {
           me.$store.dispatch("destroy_user"); //
