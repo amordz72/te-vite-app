@@ -5,16 +5,19 @@ export default createStore({
 
     isLogin: false,
     user: null,
+    user_name: "Gust",
   },
   getters: {},
   mutations: {
     fill_user(state, user) {
       state.user = user;
-      state.isLogin = true
+      state.user_name = user.displayName;
+      state.isLogin = true;
     },
     remove_user(state) {
       state.user = null;
       state.isLogin = false
+      state.user_name = "Gust";
     },
   }
   , actions: {
