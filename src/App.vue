@@ -31,13 +31,11 @@
 
           </ul>
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
+          
 
 
 
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown"  v-if="isLogin">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 {{ this.$store.state.user_name }}
@@ -49,10 +47,13 @@
                 <li><a class="dropdown-item" @click="logout" v-if="isLogin">logout </a></li>
 
               </ul>
+               </li>
+    <li class="nav-item">
+              <a v-if="isLogin" class="btn btn-sm btn-primary rounded-pill main-btn  px-3 fw-bold">logout</a>
+           
             </li>
-
           </ul>
-
+          
         </div>
       </div>
     </nav>
