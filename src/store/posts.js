@@ -1,11 +1,12 @@
 import { createStore } from "vuex";
-import  postStore from "./posts"
+
 export default createStore({
   state: {
 
-    isLogin: false,
-    user: null,
-    user_name: "Gust",
+    posts: null,
+    empty: true,
+    title: "Post Page",
+    
   },
   getters: {},
   mutations: {
@@ -30,6 +31,6 @@ export default createStore({
   }
 
   , modules: {
-    postStore: postStore,
+
   }
 });

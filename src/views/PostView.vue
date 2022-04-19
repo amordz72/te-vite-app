@@ -1,15 +1,35 @@
 <template>
   <div class="container mt-3">
     <div class="row">
+
       <div class="col-12">
-        <div
-          class="alert"
-          :class="{ 'alert-info': msg, 'alert-danger': hasError }"
-        ></div>
+
+      <div class="h1 text-center"> {{ this.$store.state.postStore.title }}</div> 
+        <div class="alert" :class="{ 'alert-info': msg, 'alert-danger': hasError }"></div>
       </div>
 
       <div class="col-md-4">
-        <Add @get="get"></Add>
+        <div class="mb-3">
+          <label for="txt_title" class="form-label">Title :</label>
+          <input type="text" class="form-control is-valid|is-invalid" 
+          name="txt_title" id="txt_title" v-model="post.title">
+          <div class="invalid-feedback">
+            Validation message
+          </div>
+
+        </div>
+        <div class="mb-3">
+          <label for="txt_title" class="form-label">Description :</label>
+          <input type="text" class="form-control is-valid|is-invalid" 
+          name="txt_title" id="txt_title" v-model="post.body">
+          <div class="invalid-feedback">
+            Validation message
+          </div>
+
+        </div>
+      
+      <button type="submit" class="btn btn-info" @click="add_post">Submit</button>
+      
       </div>
       <div class="col-md-8">
         <table class="table table-responsive table-hover text-center">
@@ -25,12 +45,8 @@
               <td>{{ p.title }}</td>
               <td>{{ p.body }}</td>
               <td>
-                <button
-                  class="btn btn-info"
-                  @click.stop.prevent="edit(p)"
-                  data-bs-toggle="modal"
-                  data-bs-target="#update_model"
-                >
+                <button class="btn btn-info" @click.stop.prevent="edit(p)" data-bs-toggle="modal"
+                  data-bs-target="#update_model">
                   update
                 </button>
                 <button class="btn btn-danger" @click.stop.prevent="del(p.id)">
@@ -42,29 +58,18 @@
         </table>
       </div>
 
-     
+
     </div>
 
     <!-- up -->
 
     <!-- Modal -->
-    <div
-      class="modal fade"
-      id="update_model"
-      tabindex="-1"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="update_model" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <h5 class="modal-title" id="exampleModalLabel">Modal title </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="mb-2">
@@ -77,12 +82,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-primary"
-              @click="update"
-              data-bs-dismiss="modal"
-            >
+            <button type="button" class="btn btn-primary" @click="update" data-bs-dismiss="modal">
               Save
             </button>
           </div>
@@ -132,7 +132,8 @@ export default {
     },
     del: async function (id) {
       del_post(id);
-      this.get(); //
+            this.get(); //
+
     },
     edit(po) {
       this.h_id = po.id;

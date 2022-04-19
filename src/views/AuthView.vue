@@ -1,6 +1,6 @@
 <template>
   <div class="Auth">
-    <h1 v-if="userLogin">{{ userLogin.email }}</h1>
+   
     <div class="login" v-if="isLogin">
       <button type="button" class="btn btn-primary" @click="logout">
         Logout
