@@ -12,7 +12,7 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-      
+
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -34,8 +34,8 @@
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
-          
-          
+
+
 
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -43,9 +43,11 @@
                 {{ this.$store.state.user_name }}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><router-link class="dropdown-item"  to="/auth" v-if="!isLogin">Auth</router-link></li>
+                <li>
+                  <router-link class="dropdown-item" to="/auth" v-if="!isLogin">Auth</router-link>
+                </li>
                 <li><a class="dropdown-item" @click="logout" v-if="isLogin">logout </a></li>
-              
+
               </ul>
             </li>
 
@@ -79,7 +81,7 @@ export default {
         if (user) {
           //    const uid = user.uid;
           me.$store.dispatch("set_user", user); //
-          router.push("/"); //
+        //  router.push("/"); 
           // ...
         } else {
           me.$store.dispatch("destroy_user"); //
