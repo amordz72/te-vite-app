@@ -1,5 +1,5 @@
 <template>
-  <div class="Auth">
+  <div class="Auth mt-3">
    
     <div class="login" v-if="isLogin">
       <button type="button" class="btn btn-primary" @click="logout">
