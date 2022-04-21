@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import AuthView from "../views/AuthView.vue";
 import PostView from "../views/PostView.vue";
+import EazyCodeView from "../views/EazyCodeView.vue";
 
 const routes = [
   {
@@ -20,6 +21,12 @@ const routes = [
     component: PostView,
 
     
+  },
+  {
+    path: "/eazy",
+    name: "EazyCodeView",
+    component: EazyCodeView,
+ 
   },
 ];
 

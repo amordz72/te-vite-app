@@ -1,18 +1,18 @@
 <template>
   <div class="home">
      
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <ButtonHome  />
   </div>
 </template>
 
 <script>
  
-import HelloWorld from "../components/HelloWorld.vue";
+import ButtonHome from "../components/ButtonHome.vue";
 
 export default {
   name: "HomeView",
   components: {
-    HelloWorld,
+    ButtonHome,
   },
 };
 </script>
